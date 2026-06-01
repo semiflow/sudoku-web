@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="header">
+            <h1 class="title">Sudoku</h1>
+            <div class="controls">
+                <label class="difficulty-label">
+                    난이도
+                    <select id="difficulty" class="difficulty-select">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </label>
+                <button id="new-game" class="btn btn-primary" type="button">새 게임</button>
+            </div>
+        </header>
+
+        <section class="status">
+            <div class="status-item">
+                <span class="status-label">Time</span>
+                <span id="timer" class="status-value">00:00</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Mistakes</span>
+                <span id="mistakes" class="status-value">0/3</span>
+            </div>
+        </section>
+
+        <section class="board-wrapper">
+            <div id="board" class="board" role="grid" aria-label="Sudoku Board"></div>
+        </section>
+
+        <section class="keypad" aria-label="Number Pad">
+            <button class="key" type="button" data-key="1">1</button>
+            <button class="key" type="button" data-key="2">2</button>
+            <button class="key" type="button" data-key="3">3</button>
+            <button class="key" type="button" data-key="4">4</button>
+            <button class="key" type="button" data-key="5">5</button>
+            <button class="key" type="button" data-key="6">6</button>
+            <button class="key" type="button" data-key="7">7</button>
+            <button class="key" type="button" data-key="8">8</button>
+            <button class="key" type="button" data-key="9">9</button>
+            <button class="key key-erase" type="button" data-key="erase" aria-label="지우기">⌫</button>
+        </section>
+    </main>
+
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <h2 id="modal-title" class="modal-title"></h2>
+            <p id="modal-message" class="modal-message"></p>
+            <button id="modal-close" class="btn btn-primary" type="button">새 게임</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
